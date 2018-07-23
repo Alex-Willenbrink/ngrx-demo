@@ -1,0 +1,12 @@
+.cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 20px;
+}
+
+.form-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 400px;
+  align-self: center;
+}

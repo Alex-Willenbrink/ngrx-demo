@@ -1,22 +1,26 @@
-<form #createPokemonForm="ngForm" (ngSubmit)="onSubmit(createPokemonForm.value)">
-  <mat-select [errorStateMatcher]="matcher" placeholder="Pokemon" name="pokemon" ngModel required>
-    <mat-option *ngFor="let pokemon of pokemonOptions" [value]="pokemon.name">
-      {{pokemon.name}}
-    </mat-option>
-  </mat-select>
-  <mat-form-field>
-    <input [errorStateMatcher]="matcher" matInput spellcheck="false" placeholder="Nickname" name="nickName" ngModel>
-  </mat-form-field>
-  <mat-form-field>
-    <input numberValidator [errorStateMatcher]="matcher" matInput spellcheck="false" placeholder="Weight" name="weight" ngModel
-      required>
-  </mat-form-field>
-  <mat-form-field>
-    <input numberValidator [errorStateMatcher]="matcher" matInput spellcheck="false" placeholder="Height" name="height" ngModel
-      required>
-  </mat-form-field>
-  <button type="submit" mat-raised-button color="primary">Create Pokemon</button>
-</form>
+<div class="">
+  <form #createPokemonForm="ngForm" class="form-wrapper" (ngSubmit)="createPokemonForm.valid && onSubmit(createPokemonForm.value)">
+    <mat-select [errorStateMatcher]="matcher" placeholder="Pokemon" name="pokemon" ngModel required>
+      <mat-option *ngFor="let pokemon of pokemonOptions" [value]="pokemon.name">
+        {{pokemon.name}}
+      </mat-option>
+    </mat-select>
+    <mat-form-field>
+      <input [errorStateMatcher]="matcher" matInput spellcheck="false" placeholder="Nickname" name="nickName" ngModel>
+    </mat-form-field>
+    <mat-form-field>
+      <input numberValidator [errorStateMatcher]="matcher" matInput spellcheck="false" placeholder="Weight" name="weight" ngModel
+        required>
+    </mat-form-field>
+    <mat-form-field>
+      <input numberValidator [errorStateMatcher]="matcher" matInput spellcheck="false" placeholder="Height" name="height" ngModel
+        required>
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="primary">Create Pokemon</button>
+  </form>
+</div>
 
-<pokemon-card *ngFor="let pokemon of createdPokemons" [pokemon]="pokemon.pokemon" [height]="pokemon.height" [weight]="pokemon.weight"
-  [nickName]="pokemon.nickName" [image]="pokemon.image"></pokemon-card>
+<div class="cards-wrapper">
+  <pokemon-card *ngFor="let pokemon of createdPokemons" [pokemon]="pokemon.pokemon" [height]="pokemon.height" [weight]="pokemon.weight"
+    [nickName]="pokemon.nickName" [image]="pokemon.image"></pokemon-card>
+</div>
