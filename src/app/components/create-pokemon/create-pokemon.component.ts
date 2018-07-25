@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 
-import { pokemonOptions } from "./pokemon-options";
+import { pokemonOptions } from "../../../assets/pokemon-options";
 
 @Component({
   selector: "create-pokemon",
